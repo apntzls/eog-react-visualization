@@ -5,6 +5,9 @@
   "dependencies": {
     "@material-ui/core": "^4.0.2",
     "@material-ui/icons": "^4.0.1",
+    "eslint": "^6.1.0",
+    "eslint-config-airbnb-base": "^13.2.0",
+    "eslint-plugin-import": "^2.18.2",
     "graphql": "^14.3.1",
     "isomorphic-fetch": "^2.2.1",
     "keyboardjs": "^2.5.1",
