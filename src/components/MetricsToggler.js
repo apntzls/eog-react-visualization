@@ -31,7 +31,6 @@ const query = `
   `;
 
 export default () => {
-  console.log("rendering Metrics Toggler");
   return (
     <Provider value={client}>
       <Toggler />
