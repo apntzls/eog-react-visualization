@@ -8,6 +8,7 @@
     "graphql": "^14.3.1",
     "isomorphic-fetch": "^2.2.1",
     "keyboardjs": "^2.5.1",
+    "lodash": "^4.17.15",
     "react": "16.8.6",
     "react-dom": "16.8.6",
     "react-redux": "^7.1.0-rc.1",
@@ -16,7 +17,9 @@
     "react-use": "^9.4.0",
     "rebound": "^0.1.0",
     "redux": "^4.0.1",
+    "redux-devtools-extension": "^2.13.5",
     "redux-saga": "^1.0.3",
+    "subscriptions-transport-ws": "^0.9.16",
     "urql": "^1.1.1"
   },
   "scripts": {
@@ -35,13 +38,12 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "eslint": "^6.1.0",
     "eslint-config-airbnb": "17.1.1",
     "eslint-config-prettier": "^6.0.0",
+    "eslint-plugin-import": "^2.18.0",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-react": "^7.14.2",
-    "prettier": "^1.18.2",
-    "redux-devtools-extension": "^2.13.5"
+    "prettier": "^1.18.2"
   }
 }
