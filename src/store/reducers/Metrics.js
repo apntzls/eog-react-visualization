@@ -1,27 +1,23 @@
 import * as actions from "../actions";
 
-const initialState = {
-  list: [],
-  values: {}
-};
+const initialState = {};
 
-const metricsListRecevied = (state, action) => {
+const metricsListReceived = (state, action) => {
   const list = action.getMetrics;
-  const values = list.reduce((acc, metric) => {
+  const metrics = list.reduce((acc, metric) => {
     acc[metric] = false;
     return acc;
   }, {});
 
-  return Object.assign({}, state, { list, values });
+  return metrics;
 };
 
 const metricsListEvent = (state, action) => {
-  const values = Object.assign({}, state.values, action.payload);
-  return Object.assign({}, state, { values });
+  return Object.assign({}, state, action.toggledMetric);
 };
 
 const handlers = {
-  [actions.METRICS_LIST_RECEIVED]: metricsListRecevied,
+  [actions.METRICS_LIST_RECEIVED]: metricsListReceived,
   [actions.TOGGLE_METRIC]: metricsListEvent
 };
 
