@@ -40,19 +40,15 @@ const handleSubscription = (messages, response) => {
   return response.newMeasurement;
 };
 
-export default props => {
+export default () => {
   return (
     <Provider value={client}>
-      <NewMeasurementSubscriber
-        render={data => {
-          return props.render(data);
-        }}
-      />
+      <NewMeasurementSubscriber />
     </Provider>
   );
 };
 
-const NewMeasurementSubscriber = props => {
+const NewMeasurementSubscriber = () => {
   const [response] = useSubscription(
     { query: subscription },
     handleSubscription
@@ -63,6 +59,8 @@ const NewMeasurementSubscriber = props => {
   if (error) {
     dispatch({ type: actions.API_ERROR, error: error.message });
   }
-
-  return <>{props.render(data)}</>;
+  if (data) {
+    dispatch({ type: actions.NEW_MEASUREMENT_RECEIVED, newMetric: data });
+  }
+  return null;
 };
