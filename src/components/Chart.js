@@ -4,8 +4,11 @@ import LinearProgress from "@material-ui/core/LinearProgress";
 import { Provider, createClient, useQuery } from "urql";
 import { Line, LineChart, XAxis, YAxis, Tooltip } from "recharts";
 import Box from "@material-ui/core/Box";
+import indigo from "@material-ui/core/colors/indigo";
 import * as actions from "../store/actions";
 import { camelCaseToLabel } from "../utils";
+
+const lineColor = indigo[300];
 
 const client = createClient({
   url: "https://react.eogresources.com/graphql"
@@ -119,7 +122,7 @@ const Chart = props => {
           dot={false}
           type="monotone"
           dataKey="value"
-          stroke="#82ca9d"
+          stroke={lineColor}
           isAnimationActive={false}
         />
       </LineChart>
