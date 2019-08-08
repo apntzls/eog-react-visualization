@@ -48,7 +48,6 @@ const Weather = () => {
   const { temperatureinFahrenheit, description, locationName } = useSelector(
     getWeather
   );
-
   const [result] = useQuery({
     query,
     variables: {
@@ -70,7 +69,9 @@ const Weather = () => {
 
   return (
     <Chip
-      label={`Weather in ${locationName}: ${description} and ${temperatureinFahrenheit}°`}
+      label={`Weather in ${locationName}: ${description} and ${Math.round(
+        temperatureinFahrenheit
+      )}°`}
     />
   );
 };
